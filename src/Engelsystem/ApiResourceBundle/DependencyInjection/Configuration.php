@@ -1,6 +1,6 @@
 <?php
 
-namespace Engelsystem\ResourceBundle\DependencyInjection;
+namespace Engelsystem\ApiResourceBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

@@ -1,5 +1,5 @@
 <?php
-namespace Engelsystem\ResourceBundle\Controller;
+namespace Engelsystem\ApiResourceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;

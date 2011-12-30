@@ -1,5 +1,5 @@
 parameters:
-#    engelsystem_resource.example.class: Engelsystem\ResourceBundle\Example
+#    engelsystem_resource.example.class: Engelsystem\ApiResourceBundle\Example
 
 services:
 #    engelsystem_resource.example:

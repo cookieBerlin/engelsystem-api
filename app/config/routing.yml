@@ -1,4 +1,4 @@
-EngelsystemResourceBundle:
-    resource: "@EngelsystemResourceBundle/Resources/config/routing.yml"
+EngelsystemApiResourceBundle:
+    resource: "@EngelsystemApiResourceBundle/Resources/config/routing.yml"
     prefix:   /
 

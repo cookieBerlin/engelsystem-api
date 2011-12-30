@@ -1,11 +1,11 @@
 <?php
-namespace Engelsystem\ResourceBundle\Controller;
+namespace Engelsystem\ApiResourceBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
 
-class TypeController extends Controller
+class ShiftController extends Controller
 {
     public function listAction()
     {
