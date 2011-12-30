@@ -1,0 +1,30 @@
+EngelsystemResourceBundle_room_list:
+    pattern:   /api/v1/resource/room
+    defaults:  { _controller: EngelsystemResourceBundle:Room:list }
+    requirements:
+        _method: GET
+
+EngelsystemResourceBundle_room_create:
+    pattern:   /api/v1/resource/room
+    defaults:  { _controller: EngelsystemResourceBundle:Room:create }
+    requirements:
+        _method: POST
+
+EngelsystemResourceBundle_room_read:
+    pattern:   /api/v1/resource/room/{id}
+    defaults:  { _controller: EngelsystemResourceBundle:Room:read }
+    requirements:
+        _method: GET
+
+EngelsystemResourceBundle_room_update:
+    pattern:   /api/v1/resource/room/{id}
+    defaults:  { _controller: EngelsystemResourceBundle:Room:update }
+    requirements:
+        _method: PUT
+
+EngelsystemResourceBundle_room_delete:
+    pattern:   /api/v1/resource/room/{id}
+    defaults:  { _controller: EngelsystemResourceBundle:Room:delete }
+    requirements:
+        _method: DELETE
+

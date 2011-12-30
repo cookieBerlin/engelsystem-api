@@ -1,0 +1,7 @@
+parameters:
+#    engelsystem_resource.example.class: Engelsystem\ResourceBundle\Example
+
+services:
+#    engelsystem_resource.example:
+#        class: %engelsystem_resource.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
