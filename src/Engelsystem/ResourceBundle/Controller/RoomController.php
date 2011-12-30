@@ -14,21 +14,21 @@ class RoomController extends Controller
 
     public function createAction()
     {
-        return new Response($status = 201);
+        return new Response(null, 201);
     }
 
     public function readAction($id)
     {
-        return new Response($status = 404);
+        return new Response(null, 404);
     }
 
     public function updateAction($id)
     {
-        return new Response($status = 200);
+        return new Response(null, 404);
     }
 
     public function deleteAction($id)
     {
-        return new Response($status = 200);
+        return new Response(null, 404);
     }
 }
