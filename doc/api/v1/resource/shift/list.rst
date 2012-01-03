@@ -1,7 +1,9 @@
---------------------------
-api/v1/resource/shift/list
---------------------------
+===========
+List shifts
+===========
 
+Request
+=======
 ::
 
   GET ${base}/api/v1/resource/list

@@ -1,21 +1,24 @@
-=====================
-api/v1/resource/shift
-=====================
+============
+Object Shift
+============
 
-`list <list.html>`__
-  List shifts
+Subobjects
+==========
+.. toctree::
+   :maxdepth: 2
 
-`create <create.html>`__
-  Create a shift
+   task/index
 
-`read <read.html>`__
-  Get a shift
+Methods
+=======
+.. toctree::
+   :maxdepth: 1
 
-`update <update.html>`__
-  Update a shift
-
-`delete <delete.html>`__
-  Delete a shift
+   list
+   create
+   read
+   update
+   delete
 
 Object representations
 ======================

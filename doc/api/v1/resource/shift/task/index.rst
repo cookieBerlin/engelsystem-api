@@ -1,24 +1,18 @@
-==========================
-api/v1/resource/shift/task
-==========================
+==============
+Subobject Task
+==============
 
-`list <list.html>`__
-  List tasks
+Methods
+=======
+.. toctree::
+   :maxdepth: 1
 
-`create <create.html>`__
-  Create a task
-
-`read <read.html>`__
-  Get a task
-
-`update <update.html>`__
-  Update a task
-
-`delete <delete.html>`__
-  Delete a task
-
-`delete all <delete-all.html>`__
-  Delete all tasks
+   list
+   create
+   read
+   update
+   delete
+   delete-all
 
 Object representations
 ======================

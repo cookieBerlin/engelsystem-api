@@ -1,7 +1,9 @@
-----------------------------
-api/v1/resource/shift/delete
-----------------------------
+============
+Delete shift
+============
 
+Request
+=======
 ::
 
   GET ${base}/api/v1/resource/...

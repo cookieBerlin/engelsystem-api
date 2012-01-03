@@ -1,7 +1,9 @@
-----------------------------
-api/v1/resource/shift/create
-----------------------------
+============
+Create shift
+============
 
+Request
+=======
 ::
 
   GET ${base}/api/v1/resource/...

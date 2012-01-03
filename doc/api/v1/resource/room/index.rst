@@ -1,24 +1,16 @@
-====================
-api/v1/resource/room
-====================
+Object Room
+===========
 
 Methods
 -------
+.. toctree::
+   :maxdepth: 1
 
-`list <list.html>`__
-  List rooms.
-
-`create <create.html>`__
-  Create a room
-
-`read <read.html>`__
-  Get a room.
-
-`update <update.html>`__
-  Update a room
-
-`delete <delete.html>`__
-  Delete a room
+   list
+   create
+   read
+   update
+   delete
 
 Object representations
 ----------------------
