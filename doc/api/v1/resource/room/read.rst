@@ -14,4 +14,4 @@ Do not supply a request body with this method.
 
 Response
 ========
-If successful, this method returns a room object in the response body.
+If successful, this method returns a 200 status and a room object in the response body.

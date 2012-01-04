@@ -6,20 +6,12 @@ Request
 =======
 ::
 
-  GET ${base}/api/v1/resource/shift/...
+  PUT ${base}/api/v1/resource/shift/${shift_id}
 
-Parameters
-----------
-
-============== ========= =====================================================
-Parameter name Value     Description
-============== ========= =====================================================
-============== ========= =====================================================
-
-Request Body
+Request body
 ------------
-...
+Supply an (partial) object.
 
 Response
 ========
-...
+If successful, this method returns a 200 or 204 status.

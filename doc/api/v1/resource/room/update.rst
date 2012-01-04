@@ -14,4 +14,4 @@ Supply an (partial) object.
 
 Response
 ========
-If successful, this method returns a 204 status.
+If successful, this method returns a 200 or 204 status.

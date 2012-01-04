@@ -6,20 +6,12 @@ Request
 =======
 ::
 
-  GET ${base}/api/v1/resource/...
-
-Parameters
-----------
-
-============== ========= =====================================================
-Parameter name Value     Description
-============== ========= =====================================================
-============== ========= =====================================================
+  DELETE ${base}/api/v1/resource/shift/${room_id}
 
 Request Body
 ------------
-...
+Do not supply a request body with this method.
 
 Response
 ========
-...
+If successful, this method returns a 200 or 204 status.
