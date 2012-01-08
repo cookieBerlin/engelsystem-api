@@ -2,13 +2,6 @@
 Object Shift
 ============
 
-Subobjects
-==========
-.. toctree::
-   :maxdepth: 2
-
-   task/index
-
 Methods
 =======
 .. toctree::

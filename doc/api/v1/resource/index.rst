@@ -6,3 +6,4 @@ Modul Resource
 
    room/index
    shift/index
+   task/index
