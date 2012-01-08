@@ -2,6 +2,8 @@
 Get task
 ========
 
+Request
+=======
 ::
 
   GET ${base}/api/v1/resource/...

@@ -1,20 +1,9 @@
+===========
 Object Room
 ===========
 
-Methods
--------
-.. toctree::
-   :maxdepth: 1
-
-   list
-   create
-   read
-   update
-   delete
-
 Object representations
-----------------------
-
+======================
 ::
 
   {
@@ -34,3 +23,13 @@ name                    string
 description             string
 ======================= ========= ===================================
 
+Methods
+=======
+.. toctree::
+   :maxdepth: 1
+
+   list
+   create
+   read
+   update
+   delete

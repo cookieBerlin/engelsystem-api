@@ -1,8 +1,8 @@
+==============
 Modul Resource
 ==============
-
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    room/index
    shift/index

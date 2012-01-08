@@ -2,20 +2,8 @@
 Object Shift
 ============
 
-Methods
-=======
-.. toctree::
-   :maxdepth: 1
-
-   list
-   create
-   read
-   update
-   delete
-
 Object representations
 ======================
-
 ::
 
   {
@@ -51,3 +39,14 @@ time                    object
 time.start              datetime
 time.duration           string
 ======================= ========= ===================================
+
+Methods
+=======
+.. toctree::
+   :maxdepth: 1
+
+   list
+   create
+   read
+   update
+   delete
