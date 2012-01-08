@@ -11,7 +11,6 @@ Object representations
     "id": string,
     "name": string,
     "description": string,
-    "comments": string,
     "room": {
       "id": string,
       "name": string,
@@ -30,7 +29,6 @@ kind                    string    Value: "engelsystem#resource/shift"
 id                      string    Internal identifier. Read-only
 name                    string
 description             string
-comments                string
 room                    object
 room.id                 string
 room.name               string
