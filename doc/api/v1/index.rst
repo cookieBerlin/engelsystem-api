@@ -10,6 +10,17 @@ Data Formats
 ============
 Objects in the API are represented using JSON data formats.
 
+Common Properties
++++++++++++++++++
+While each type of resource will have its own unique representation, there are a number of common properties that are found in almost all resource representations.
+
+======================= ========= ===================================
+Property name           Value     Description
+======================= ========= ===================================
+kind                    string    This identifies what kind of resource a JSON object represents. (*read-only*)
+id                      string    This property uniquely identifies a resource. (*read-only*)
+======================= ========= ===================================
+
 Types
 +++++
 Some special data types are used to specify data fields.
