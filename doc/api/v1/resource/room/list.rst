@@ -1,3 +1,5 @@
+.. include:: ../../common.inc
+
 ==========
 List rooms
 ==========
@@ -24,4 +26,4 @@ Do not supply a request body with this method.
 
 Response
 ========
-In successful, this method returns a 200 status and a list of room objects in the response body.
+|response:list|

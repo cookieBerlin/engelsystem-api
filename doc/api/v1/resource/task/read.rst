@@ -1,3 +1,5 @@
+.. include:: ../../common.inc
+
 ========
 Get task
 ========
@@ -14,4 +16,4 @@ Do not supply a request body with this method.
 
 Response
 ========
-If successful, this method returns a 200 status and a shift object in the response body.
+|response:read|

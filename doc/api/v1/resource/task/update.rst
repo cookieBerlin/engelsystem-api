@@ -1,3 +1,5 @@
+.. include:: ../../common.inc
+
 ===========
 Update task
 ===========
@@ -22,4 +24,4 @@ Request Body
 
 Response
 ========
-...
+|response:update|

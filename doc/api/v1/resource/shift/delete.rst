@@ -1,3 +1,5 @@
+.. include:: ../../common.inc
+
 ============
 Delete shift
 ============
@@ -14,4 +16,4 @@ Do not supply a request body with this method.
 
 Response
 ========
-If successful, this method returns a 200 or 204 status.
+|response:delete|

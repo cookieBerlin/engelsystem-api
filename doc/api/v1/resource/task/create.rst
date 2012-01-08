@@ -1,3 +1,5 @@
+.. include:: ../../common.inc
+
 ===========
 Create task
 ===========
@@ -23,4 +25,4 @@ Do not supply a request body with this method.
 
 Response
 ========
-In successful, this method returns a 201 status and the URI of the newly created object in the Location-header.
+|response:create|

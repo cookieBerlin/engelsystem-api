@@ -1,3 +1,5 @@
+.. include:: ../../common.inc
+
 ===========
 List shifts
 ===========
@@ -22,4 +24,4 @@ Do not supply a request body with this method.
 
 Response
 ========
-In successful, this method returns a 200 status and a list of shift objects in the response body.
+|response:list|

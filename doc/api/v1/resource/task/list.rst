@@ -1,3 +1,5 @@
+.. include:: ../../common.inc
+
 ==========
 List tasks
 ==========
@@ -14,4 +16,4 @@ Do not supply a request body with this method.
 
 Response
 ========
-In successful, this method returns a 200 status and a list of task objects in the response body.
+|response:list|
