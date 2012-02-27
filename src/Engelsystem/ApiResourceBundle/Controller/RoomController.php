@@ -9,7 +9,11 @@ class RoomController extends Controller
 {
     public function listAction()
     {
-        return new Response("[]");
+        return new Response('[{'.
+				'"kind": "engelsystem#resource/room",'.
+				'"id": "string",'.
+				'"name": "string",'.
+				'"description": "string" }]');
     }
 
     public function createAction()
@@ -19,7 +23,8 @@ class RoomController extends Controller
 
     public function readAction($id)
     {
-        return new Response(null, 404);
+        return new Response('["a"]');
+//        return new Response(null, 404);
     }
 
     public function updateAction($id)

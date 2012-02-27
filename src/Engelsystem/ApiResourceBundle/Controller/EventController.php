@@ -9,6 +9,6 @@ class EventController extends Controller
 {
     public function getAction()
     {
-        return new Response("{}");
+        return new Response('[{"Name":"<NAME>"}]');
     }
 }

@@ -9,7 +9,21 @@ class ShiftController extends Controller
 {
     public function listAction()
     {
-        return new Response("[]");
+        return new Response('[{'.
+				'"kind": "engelsystem#resource/shift",'.
+				'"id": "string",'.
+				'"name": "string",'.
+				'"description": "string",'.
+				'"room": { '.
+					'"id": "string",'.
+					'"name": "string",'.
+					'"description": "string"'.
+				'},'.
+				'"time": {'.
+					'"start": "datetime",'.
+					'"duration": "string" '.
+				'}'.
+			'}]');
     }
 
     public function createAction()
