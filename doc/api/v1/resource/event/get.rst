@@ -1,14 +1,14 @@
 .. include:: ../../common.inc
 
-===========
-List shifts
-===========
+=========
+Get Event
+=========
 
 Request
 =======
 ::
 
-  GET ${base}/api/v1/resource/shift
+  GET ${base}/api/v1/resource/event
 
 Parameters
 ----------
@@ -24,4 +24,4 @@ Do not supply a request body with this method.
 
 Response
 ========
-|response:list|
+|response:get|
