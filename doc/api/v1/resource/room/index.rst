@@ -9,17 +9,16 @@ Object representations
   {
     "kind": "engelsystem#resource/room",
     "id": string,
-    "name": string,
-    "description": string,
+    "name": tagstring,
+    "description": tagstring,
   }
 
 ======================= ========= ===================================
 Property name           Value     Description
 ======================= ========= ===================================
 kind                    string    Value: "engelsystem#resource/room"
-id                      string    Internal identifier. Read-only
-name                    string
-description             string
+name                    tagstring
+description             tagstring
 ======================= ========= ===================================
 
 Methods
@@ -28,6 +27,7 @@ Methods
    :maxdepth: 1
 
    list
+   display
    create
    read
    update
