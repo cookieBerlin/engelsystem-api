@@ -54,6 +54,8 @@ Property name           Value     Description
 ======================= ========= ===================================
 kind                    string    This identifies what kind of resource a JSON object represents. (*read-only*)
 id                      string    This property uniquely identifies a resource. (*read-only*)
+name                    tagstring The display name of a resource.
+description             tagstring
 ======================= ========= ===================================
 
 Errors

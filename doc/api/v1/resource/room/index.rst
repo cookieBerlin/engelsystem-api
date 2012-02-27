@@ -17,8 +17,6 @@ Object representations
 Property name           Value     Description
 ======================= ========= ===================================
 kind                    string    Value: "engelsystem#resource/room"
-name                    tagstring
-description             tagstring
 ======================= ========= ===================================
 
 Methods
