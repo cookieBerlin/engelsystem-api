@@ -1,5 +1,5 @@
 ===========
-Object Task
+Object type
 ===========
 
 Object representations
@@ -25,4 +25,3 @@ Methods
    read
    update
    delete
-   delete-all
