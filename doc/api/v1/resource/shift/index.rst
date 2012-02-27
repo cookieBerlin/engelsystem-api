@@ -9,12 +9,12 @@ Object representations
   {
     "kind": "engelsystem#resource/shift",
     "id": string,
-    "name": string,
-    "description": string,
+    "name": tagstring,
+    "description": tagstring,
     "room": {
       "id": string,
-      "name": string,
-      "description": string,
+      "name": tagstring,
+      "description": tagstring,
     }
     "time": {
       "start": datetime,
@@ -26,13 +26,7 @@ Object representations
 Property name           Value     Description
 ======================= ========= ===================================
 kind                    string    Value: "engelsystem#resource/shift"
-id                      string    Internal identifier. Read-only
-name                    string
-description             string
 room                    object
-room.id                 string
-room.name               string
-room.description        string
 time                    object
 time.start              datetime
 time.duration           string
