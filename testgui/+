@@ -1,0 +1,34 @@
+$(document).ready(function(){
+
+	// clean text blocks
+	$('p textarea').attr('value','');
+
+//	$('p input#list').css('background', 'blue');
+	$('p input#list').click(function(){
+		resource=$(this).parent().attr("class");
+		url = "../web/api/v1/resource/" + resource
+
+		console.log("#Click list '" + resource + "', URL:'" + url + "'");
+
+		$.ajax({
+			url: url,
+			context: $(this),
+			dataType: "json",
+			success: function(ergebnis){
+				$(this).parent().find('textarea').attr('value', ergebnis);
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				console.log( "ajax error: " + textStatus + " - " + errorThrown + "Result:");
+				console.log( jqXHR);
+
+				$(this).parent().find('textarea').attr('value', 
+					"ajax error: " + textStatus + " - " + errorThrown + 
+					"\n\nResult:\n" + jqXHR.responseText);
+			}
+		});
+		
+	});
+
+
+
+});

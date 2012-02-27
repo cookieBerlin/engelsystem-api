@@ -1,0 +1,11 @@
+/* ------- Basis-Styling ----------- */
+* { margin: 0; padding: 0; }
+a { color: #090; }
+ul, ol, dl, p { margin-bottom: 1em; }
+body { 
+  font: 100%/1.5 helvetica, arial, sans-serif;
+  color:  #333;
+  padding:  20px;
+}
+
+/* ------- Individuelles Styling  ----------- */
