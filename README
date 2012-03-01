@@ -1,1 +1,21 @@
 This is the Engelsystem API. Use with care.
+
+Installation engelsystem-api:
+	git clone git://github.com/cookieBerlin/engelsystem-api.git
+	cd engelsystem-api
+	./bin/vendors install
+	cd doc
+	make html
+	cd ..
+	sudo chgrp www-data app/cache/ app/logs/
+	sudo chmod g+w app/cache/ app/logs/
+
+configure Apache:
+	TODO
+
+configure Postgres:
+	TODO
+
+configure LDAP:
+	TODO
+
