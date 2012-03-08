@@ -10,7 +10,7 @@ $(document).ready(function(){
 	// list command
 	$('p input#list').click(function(){
 		resource=$(this).parent().attr("class");
-		url = "../web/api/v1/resource/" + resource
+		url = "../web/app_dev.php/api/v1/resource/" + resource
 //		console.log("#Click list '" + resource + "', URL:'" + url + "'");
 
 		$.ajax({
@@ -34,12 +34,26 @@ $(document).ready(function(){
 
 	// create command
 	$('p input#create').click(function(){
-/*
 		resource=$(this).parent().attr("class");
-		url = "../web/api/v1/resource/" + resource
+		url = "../web/app_dev.php/api/v1/resource/" + resource
 		console.log("#Click create '" + resource + "', URL:'" + url + "'");
-*/
-		$(this).parent().find('textarea').attr('value', "NIY");
+
+		$.ajax({
+			url: url,
+			context: $(this),
+			dataType: "json",
+			type: "POST",
+			cache: false,
+			data: { name: $(this).next().attr("value") },
+			success: function(data, textStatus, jqXHR){
+				$(this).parent().find('textarea').attr('value', data.toSource());
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				$(this).parent().find('textarea').attr('value', 
+					"ajax error: " + textStatus + " - " + errorThrown + 
+					"\n\nResult:\n" + jqXHR.responseText);
+			}
+		});
 	});
 
 	// get command
@@ -68,12 +82,28 @@ $(document).ready(function(){
 
 	// update command
 	$('p input#update').click(function(){
-/*
 		resource=$(this).parent().attr("class");
-		url = "../web/api/v1/resource/" + resource
+		id = $(this).next().attr("value");
+		url = "../web/app_dev.php/api/v1/resource/" + resource + "/" + id;
 		console.log("#Click update '" + resource + "', URL:'" + url + "'");
-*/
-		$(this).parent().find('textarea').attr('value', "NIY");
+
+		$.ajax({
+			url: url,
+			context: $(this),
+			dataType: "json",
+			type: "PUT",
+			cache: false,
+			data: { name: prompt ("New Name?","New Name"), 
+				description: prompt ("New Description?", "New Decription") },
+			success: function(data, textStatus, jqXHR){
+				$(this).parent().find('textarea').attr('value', data.toSource());
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				$(this).parent().find('textarea').attr('value', 
+					"ajax error: " + textStatus + " - " + errorThrown + 
+					"\n\nResult:\n" + jqXHR.responseText);
+			}
+		});
 	});
 
 	// delete command
@@ -81,7 +111,7 @@ $(document).ready(function(){
 
 		resource=$(this).parent().attr("class");
 		id = $(this).next().attr("value");
-		url = "../web/api/v1/resource/" + resource + "/" + id;
+		url = "../web/app_dev.php/api/v1/resource/" + resource + "/" + id;
 		console.log("#Click delete '" + resource + "', URL:'" + url + "'");
 
 		$.ajax({

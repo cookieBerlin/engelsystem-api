@@ -1,0 +1,24 @@
+Engelsystem\ApiResourceBundle\Entity\Room:
+  type: entity
+  table: null
+  repositoryClass: Engelsystem\ApiResourceBundle\Repository\RoomRepository
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    name:
+      type: string
+      length: '255'
+      unique: true
+    description:
+      type: text
+      length: null
+    visible:
+      type: boolean
+      length: null
+    order_modifier:
+      type: integer
+      length: null
+  lifecycleCallbacks: {  }
