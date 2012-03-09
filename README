@@ -10,6 +10,12 @@ Installation engelsystem-api:
 	sudo chgrp www-data app/cache/ app/logs/
 	sudo chmod g+w app/cache/ app/logs/
 
+configure symfony:
+	configure database in "app/config/parameters.ini"
+	call:
+		php app/console doctrine:database:create
+		php app/console doctrine:schema:update --force
+
 configure Apache:
 	TODO
 

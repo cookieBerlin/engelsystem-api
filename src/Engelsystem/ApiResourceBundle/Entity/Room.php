@@ -54,11 +54,16 @@ class Room
 				'"kind": "engelsystem#resource\/room", '.
 				'"id": "%s", '.
 				'"name": "%s", '.
-				'"description": { "": "%s"} '.
+				'"description": { "": "%s"}, '.
+				'"visible": "%s", '.
+				'"order_modifier": "%s" '.
 			'}',
 			$this->id,
 			$this->name,
-			$this->description);
+			$this->description,
+			$this->visible,
+			$this->order_modifier
+                        );
     }
 
     /**
@@ -116,7 +121,7 @@ class Room
      *
      * @param booleam $visible
      */
-    public function setVisible(\booleam $visible)
+    public function setVisible($visible)
     {
         $this->visible = $visible;
     }
