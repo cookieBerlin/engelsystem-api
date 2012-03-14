@@ -1,38 +1,43 @@
 EngelsystemApiResourceBundle_event_get:
     pattern:   /api/v1/resource/event
-    defaults:  { _controller: EngelsystemApiResourceBundle:Event:get }
+    defaults:  { _controller: EngelsystemApiResourceBundle:Event:get, _format: json }
     requirements:
         _method: GET
 
 EngelsystemApiResourceBundle_room_list:
     pattern:   /api/v1/resource/room
-    defaults:  { _controller: EngelsystemApiResourceBundle:Room:list }
+    defaults:  { _controller: EngelsystemApiResourceBundle:Room:list, _format: json }
     requirements:
         _method: GET
+        _format: JSON
 
 EngelsystemApiResourceBundle_room_create:
     pattern:   /api/v1/resource/room
-    defaults:  { _controller: EngelsystemApiResourceBundle:Room:create }
+    defaults:  { _controller: EngelsystemApiResourceBundle:Room:create, _format: json }
     requirements:
         _method: POST
+        _format: JSON
 
 EngelsystemApiResourceBundle_room_read:
     pattern:   /api/v1/resource/room/{id}
-    defaults:  { _controller: EngelsystemApiResourceBundle:Room:read }
+    defaults:  { _controller: EngelsystemApiResourceBundle:Room:read, _format: json }
     requirements:
         _method: GET
+        _format: JSON
 
 EngelsystemApiResourceBundle_room_update:
     pattern:   /api/v1/resource/room/{id}
-    defaults:  { _controller: EngelsystemApiResourceBundle:Room:update }
+    defaults:  { _controller: EngelsystemApiResourceBundle:Room:update, _format: json }
     requirements:
         _method: PUT
+        _format: JSON
 
 EngelsystemApiResourceBundle_room_delete:
     pattern:   /api/v1/resource/room/{id}
-    defaults:  { _controller: EngelsystemApiResourceBundle:Room:delete }
+    defaults:  { _controller: EngelsystemApiResourceBundle:Room:delete, _format: json }
     requirements:
         _method: DELETE
+        _format: JSON
 
 EngelsystemApiResourceBundle_shift_list:
     pattern:   /api/v1/resource/shift

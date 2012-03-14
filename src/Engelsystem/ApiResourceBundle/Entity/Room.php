@@ -29,11 +29,6 @@ class Room
      */
     private $visible;
 
-    /**
-     * @var integer $order_modifier
-     */
-    private $order_modifier;
-
 
     public function __construct() 
     {
@@ -55,14 +50,12 @@ class Room
 				'"id": "%s", '.
 				'"name": "%s", '.
 				'"description": { "": "%s"}, '.
-				'"visible": "%s", '.
-				'"order_modifier": "%s" '.
+				'"visible": "%s" '.
 			'}',
 			$this->id,
 			$this->name,
 			$this->description,
-			$this->visible,
-			$this->order_modifier
+			$this->visible
                         );
     }
 
@@ -134,25 +127,5 @@ class Room
     public function getVisible()
     {
         return $this->visible;
-    }
-
-    /**
-     * Set order_modifier
-     *
-     * @param integer $orderModifier
-     */
-    public function setOrderModifier($orderModifier)
-    {
-        $this->order_modifier = $orderModifier;
-    }
-
-    /**
-     * Get order_modifier
-     *
-     * @return integer 
-     */
-    public function getOrderModifier()
-    {
-        return $this->order_modifier;
     }
 }

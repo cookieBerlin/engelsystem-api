@@ -12,8 +12,26 @@ class RoomController extends EngelsystemController
     public function listAction()
     {
 	// DB query
-        $repository = $this->getDoctrine()->getRepository('EngelsystemApiResourceBundle:Room');
-        $rooms = $repository->findAll();
+        $em = $this->getDoctrine()->getEntityManager();
+        $repository = $this->getDoctrine()->getRepository( 'EngelsystemApiResourceBundle:Room');
+        $request = $this->get( 'request');
+        if ( $request->query->has( 'filter_name') ) {
+            $rooms = $repository->createQueryBuilder( 'p')
+                                ->where( 'p.name = :name')
+                                ->setParameter( 'name', $request->query->get( 'filter_name'))
+                                ->getQuery()
+                                ->getResult();
+        } else if ( $request->query->has('filter') ) {
+            $rooms = $repository->createQueryBuilder( 'p')
+                                ->where( 'p.name = :name')
+                                ->setParameter( 'name', $request->query->get( 'filter'))
+                                ->orWhere( 'p.description = :description')
+                                ->setParameter( 'description', $request->query->get( 'filter'))
+                                ->getQuery()
+                                ->getResult();
+        } else {
+            $rooms = $repository->findAll();
+        }
 
 	// create list
         $temp = "[";
@@ -25,10 +43,7 @@ class RoomController extends EngelsystemController
         }
         $temp .= "]";
 
-	// renerate response            
-        $response = new Response( $temp, 200);
-	$response->headers->set( 'Content-Type', 'application/json');
-        return $response;
+        return new Response( $temp, 200);
     }
 
     public function createAction()
@@ -47,10 +62,6 @@ class RoomController extends EngelsystemController
         }
         if ( $request->request->has('visible') ) {
             $room->setVisible(  $request->request->get('visible') );
-            $room->setVisible(  $request->request->get('visible') );
-        }
-        if ( $request->request->has('order_modifier') ) {
-            $room->setOrderModifier(  $request->request->get('order_modifier') );
         }
 
 	// save in DB
@@ -79,10 +90,7 @@ class RoomController extends EngelsystemController
             throw $this->createNotFoundException('The room does not exist');
         }
 
-	// renerate response            
-        $response = new Response( $room->toJSON(), 200);
-    	$response->headers->set( 'Content-Type', 'application/json');
-        return $response;
+        return new Response( $room->toJSON(), 200);
     }
 
     public function updateAction($id)
@@ -104,9 +112,6 @@ class RoomController extends EngelsystemController
         }
         if ( $request->request->has('visible') ) {
             $room->setVisible(  $request->request->get('visible') );
-        }
-        if ( $request->request->has('order_modifier') ) {
-            $room->setOrderModifier(  $request->request->get('order_modifier') );
         }
 	
         // store in db

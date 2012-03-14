@@ -9,9 +9,42 @@ class RoomControllerTest extends WebTestCase
     public function testList()
     {
         $client = static::createClient();
-
+	$description = 'DESC1'. time();
+	
+        // create with name 
+	$name = 'TestList1'. time();
+        $crawler = $client->request('POST', '/api/v1/resource/room', array( 'name' => $name));
+        $this->assertEquals( 201, $client->getResponse()->getStatusCode());
+       
+	$name = 'TestList2'. time();
+        $crawler = $client->request('POST', '/api/v1/resource/room', array( 'name' => $name, 'description' => $description));
+        $this->assertEquals( 201, $client->getResponse()->getStatusCode());
+       
+	$name = 'TestList3'. time();
+        $crawler = $client->request('POST', '/api/v1/resource/room', array( 'name' => $name, 'description' => $description));
+        $this->assertEquals( 201, $client->getResponse()->getStatusCode());
+       
+        // check unfiltert list
         $crawler = $client->request('GET', '/api/v1/resource/room');
         $this->assertEquals( 200, $client->getResponse()->getStatusCode());
+        $Result = json_decode( $client->getResponse()->getContent(), true);
+        $this->assertTrue( sizeof( $Result) >= 3);
+
+        // check name filtert list
+        $crawler = $client->request('GET', '/api/v1/resource/room', array( 'filter_name' => $name));
+        $Result = json_decode( $client->getResponse()->getContent(), true);
+        $this->assertEquals( 1, sizeof( $Result));
+
+        // check description / name filtert list
+        $crawler = $client->request('GET', '/api/v1/resource/room', array( 'filter' => $name));
+        $this->assertEquals( 200, $client->getResponse()->getStatusCode());
+        $Result = json_decode( $client->getResponse()->getContent(), true);
+        $this->assertEquals( 1, sizeof( $Result));
+
+        $crawler = $client->request('GET', '/api/v1/resource/room', array( 'filter' => $description));
+        $this->assertEquals( 200, $client->getResponse()->getStatusCode());
+        $Result = json_decode( $client->getResponse()->getContent(), true);
+        $this->assertEquals( 2, sizeof( $Result));
     }
 
     public function testCreate()
@@ -24,23 +57,21 @@ class RoomControllerTest extends WebTestCase
         $this->assertEquals( 404, $client->getResponse()->getStatusCode());
        
 	// create with name 
-	$name = 'Test'. time();
+	$name = 'TestCreate1'. time();
         $crawler = $client->request('POST', '/api/v1/resource/room', array( 'name' => $name));
         $this->assertEquals( 201, $client->getResponse()->getStatusCode());
        
-	// create with name, description, visible and order_modifier 
-	$name = 'Test'. time();
+	// create with name, description and visible 
+	$name = 'TestCreate2'. time();
         $crawler = $client->request('POST', '/api/v1/resource/room', 
                                     array( 'name' => $name,
                                            'description' => 'description ...',
-                                           'visible' => false,
-                                           'order_modifier' => 23));
+                                           'visible' => false) );
         $this->assertEquals( 201, $client->getResponse()->getStatusCode());
 	$Result = json_decode( $client->getResponse()->getContent());
         $this->assertEquals( $Result->name, $name);
         $this->assertEquals( $Result->description->_empty_, 'description ...');
         $this->assertEquals( $Result->visible, false);
-        $this->assertEquals( $Result->order_modifier, 23);
 	
         // create with existing name 
         $crawler = $client->request('POST', '/api/v1/resource/room', array( 'name' => $name));
@@ -56,7 +87,7 @@ class RoomControllerTest extends WebTestCase
         $this->assertEquals( 404, $client->getResponse()->getStatusCode());
 	
         // create with name 
-	$name = 'Test'. time();
+	$name = 'TestGet'. time();
         $crawler = $client->request('POST', '/api/v1/resource/room', array( 'name' => $name));
         $this->assertEquals( 201, $client->getResponse()->getStatusCode());
 	$Result = json_decode( $client->getResponse()->getContent());
@@ -75,38 +106,34 @@ class RoomControllerTest extends WebTestCase
         $this->assertEquals( 404, $client->getResponse()->getStatusCode());
 
         // create with name 
-	$name = 'Test'. time();
+	$name = 'TestUpdate'. time();
         $crawler = $client->request('POST', '/api/v1/resource/room', array( 'name' => $name));
         $this->assertEquals( 201, $client->getResponse()->getStatusCode());
 	$Result = json_decode( $client->getResponse()->getContent());
 
 	// Update existing room 1
-	$name = 'Test1_'. time();
+	$name = 'TestUpdate1_'. time();
         $crawler = $client->request('PUT', '/api/v1/resource/room/'. $Result->id, 
                                     array( 'name' => $name,
                                            'description' => 'description1...',
-                                           'visible' => true,
-                                           'order_modifier' => 42));
+                                           'visible' => true));
         $this->assertEquals( 202, $client->getResponse()->getStatusCode());
 	$Result = json_decode( $client->getResponse()->getContent());
         $this->assertEquals( $Result->name, $name);
         $this->assertEquals( $Result->description->_empty_, 'description1...');
         $this->assertEquals( $Result->visible, 1);
-        $this->assertEquals( $Result->order_modifier, 42);
 
 	// Update existing room 2
-	$name = 'Test2_'. time();
+	$name = 'TestUpdate2_'. time();
         $crawler = $client->request('PUT', '/api/v1/resource/room/'. $Result->id, 
                                     array( 'name' => $name,
                                            'description' => 'description2...',
-                                           'visible' => false,
-                                           'order_modifier' => -23));
+                                           'visible' => false));
         $this->assertEquals( 202, $client->getResponse()->getStatusCode());
 	$Result = json_decode( $client->getResponse()->getContent());
         $this->assertEquals( $Result->name, $name);
         $this->assertEquals( $Result->description->_empty_, 'description2...');
         $this->assertEquals( $Result->visible, false);
-        $this->assertEquals( $Result->order_modifier, -23);
     }
     
     public function testDelete()
@@ -118,7 +145,7 @@ class RoomControllerTest extends WebTestCase
         $this->assertEquals( 404, $client->getResponse()->getStatusCode());
 
         // create with name 
-	$name = 'Test'. time();
+	$name = 'TestDelete'. time();
         $crawler = $client->request('POST', '/api/v1/resource/room', array( 'name' => $name));
         $this->assertEquals( 201, $client->getResponse()->getStatusCode());
 	$Result = json_decode( $client->getResponse()->getContent());
@@ -127,5 +154,4 @@ class RoomControllerTest extends WebTestCase
         $crawler = $client->request('DELETE', '/api/v1/resource/room/'. $Result->id);
         $this->assertEquals( 202, $client->getResponse()->getStatusCode());
     }
-    
 }

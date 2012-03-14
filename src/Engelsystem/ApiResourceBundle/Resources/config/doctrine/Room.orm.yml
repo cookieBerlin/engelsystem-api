@@ -18,7 +18,4 @@ Engelsystem\ApiResourceBundle\Entity\Room:
     visible:
       type: boolean
       length: null
-    order_modifier:
-      type: integer
-      length: null
   lifecycleCallbacks: {  }
