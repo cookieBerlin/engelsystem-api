@@ -32,22 +32,6 @@ time.duration           string
 tasks                   list      see :doc:`../shift-task/index`
 ======================= ========= ===================================
 
-Modify
-------
-::
-
-  {
-    "name": tagstring,
-    "description": tagstring,
-    "room": {
-      "id": string,
-    }
-    "time": {
-      "start": datetime,
-      "duration": string,
-    }
-  }
-
 Methods
 =======
 .. toctree::
