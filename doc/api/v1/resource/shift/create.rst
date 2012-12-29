@@ -12,7 +12,7 @@ Request
 
 Request Body
 ------------
-Supply an object in the request body.
+|request:create|
 
 Response
 ========

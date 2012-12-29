@@ -12,7 +12,7 @@ Request
 
 Request body
 ------------
-Supply an (partial) object.
+|request:update|
 
 Response
 ========
