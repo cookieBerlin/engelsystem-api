@@ -22,7 +22,7 @@ filter_name    string    Filter after name
 
 Request Body
 ------------
-Do not supply a request body with this method.
+|request:list|
 
 Response
 ========

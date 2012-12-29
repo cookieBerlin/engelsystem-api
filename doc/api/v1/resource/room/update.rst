@@ -10,10 +10,10 @@ Request
 
   PUT ${base}/api/v1/resource/room/${room_id}
 
-Request body
+Request Body
 ------------
-Supply an (partial) object.
+|request:update|
 
 Response
 ========
-|response:delete|
+|response:update|
