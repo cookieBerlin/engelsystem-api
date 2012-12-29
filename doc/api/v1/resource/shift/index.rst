@@ -11,30 +11,24 @@ Object representations
     "id": string,
     "name": tagstring,
     "description": tagstring,
-    "room": {
-      "id": string,
-      "name": tagstring,
-      "description": tagstring,
-    }
+    "room": object,
     "time": {
       "start": datetime,
       "duration": string,
     }
-    "shifts": {
-    }
+    "tasks": [
+    ]
   }
 
 ======================= ========= ===================================
 Property name           Value     Description
 ======================= ========= ===================================
 kind                    string    Value: "engelsystem#resource/shift"
-room                    object
-room.id                 string    Unique identification of room.
-room.*                  all       (*read-only*)
+room                    object    see :doc:`../room/index`
 time                    object
 time.start              datetime
 time.duration           string
-shifts                  object?
+tasks                   list   
 ======================= ========= ===================================
 
 Modify
