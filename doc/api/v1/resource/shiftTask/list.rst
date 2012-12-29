@@ -12,7 +12,7 @@ Request
 
 Request Body
 ------------
-Do not supply a request body with this method.
+|request:list|
 
 Response
 ========

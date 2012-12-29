@@ -21,7 +21,7 @@ person         string    Person-ID
 
 Request Body
 ------------
-Do not supply a request body with this method.
+|request:create|
 
 Response
 ========
