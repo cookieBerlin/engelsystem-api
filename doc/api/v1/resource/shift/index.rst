@@ -17,6 +17,7 @@ Object representations
       "duration": string,
     }
     "tasks": [
+      object
     ]
   }
 
@@ -28,7 +29,7 @@ room                    object    see :doc:`../room/index`
 time                    object
 time.start              datetime
 time.duration           string
-tasks                   list   
+tasks                   list      see :doc:`../shift-task/index`
 ======================= ========= ===================================
 
 Modify

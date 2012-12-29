@@ -8,7 +8,7 @@ Request
 =======
 ::
 
-  DELETE ${base}/api/v1/resource/shift/${shift_id}/tasks/${type_id}/${task_id}
+  DELETE ${base}/api/v1/resource/shift/${shift_id}/tasks/${type_id}
 
 Request Body
 ------------

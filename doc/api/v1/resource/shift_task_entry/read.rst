@@ -1,14 +1,14 @@
 .. include:: ../../common.inc
 
-========
-Get task
-========
+==============
+Get task entry
+==============
 
 Request
 =======
 ::
 
-  GET ${base}/api/v1/resource/shift/${shift_id}/tasks/${type_id}
+  GET ${base}/api/v1/resource/shift/${shift_id}/tasks/${type_id}/${task_id}
 
 Request Body
 ------------

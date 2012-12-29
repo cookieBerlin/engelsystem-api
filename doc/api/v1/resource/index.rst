@@ -8,4 +8,5 @@ Modul Resource
    room/index
    shift/index
    shift_task/index
+   shift_task_entry/index
    type/index
