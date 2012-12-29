@@ -7,5 +7,5 @@ Modul Resource
    event/index
    room/index
    shift/index
-   shiftTask/index
+   shift_task/index
    type/index
